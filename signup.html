@@ -6,10 +6,11 @@
     <title>Ecommerce Website</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="image/logo.jpg" class="logo"  alt=""></a>
+        <a href="#"><img src="image/logo.jpg" class="logo" alt=""></a>
         <div>
            <ul id="navbar">
             <li><a class="active" href="/">Home</a></li>
@@ -25,39 +26,45 @@
  <section id="loginpage">
     <div class="container">
         <div class="forms">
-          <div class="form login">
-            <span class="title">Login</span>
-            <form action="#">
+          <!-- Registration Form -->
+          <div class="form signup">
+            <span class="title">Registration</span>
+            <form action="http://localhost:5000/api/users/create-user" method="post">
               <div class="input-field">
-                <input type="text" placeholder="Enter your email" required id="email"/>
+                <input type="text" placeholder="Enter your name"  id="signup_name" name="fullName" />
+                <i class="far fa-user"></i>
+              </div>
+              <div class="input-field">
+                <input type="email" placeholder="Enter your email"  id="signup_email" name="email" />
                 <i class="far fa-envelope"></i>
               </div>
               <div class="input-field">
-                <input type="password" class="password" placeholder="Enter your password" required id="password"/>
+                <input type="password" class="password" placeholder="Create a password" name="password"  id="signup_password"/>
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class="input-field">
+                <input type="password" class="password" name="passwordConfirm" placeholder="Confirm a password"  id="signup_confirm_password"/>
                 <i class="fas fa-lock"></i>
                 <i class="fas fa-eye-slash showHidePw"></i>
               </div>
               <div class="checkbox-text">
                 <div class="checkbox-content">
-                  <input type="checkbox" id="logCheck" />
-                  <label for="logCheck" class="text">Remember me</label>
+                  <input type="checkbox" id="termCon" />
+                  <label for="termCon" class="text">I accepted all terms and conditions</label>
                 </div>
-
-                <a href="#" class="text">Forgot password?</a>
               </div>
-  
               <div class="input-field button">
-                <button type="button" id="login-link" class="login-button">Login</button>
+                <button type="submit" class="signup-button">Sign Up</button>
+              </div>
+              <div>
+                <span class="text">
+                  Already a member?
+                  <a href="login.html" class="text login-link">Login</a>
+                </span>
               </div>
             </form>
-            <div class="login-signup">
-              <span class="text"
-                >Not a member?
-                <a href="signup.html" class="text signup-link">Signup Now</a>
-              </span>
-            </div>
           </div>
-          </div>
+        </div>
       </div>
  </section>
 
@@ -113,88 +120,13 @@
             <img src="image/esewa.jpg" alt="">
             <img src="image/khalti.jpg" alt="">
             <img src="image/ime.jpg" alt="">
-            
+
             </div>
 
             <div class="copy">
                 <p><b><u>© CHITWAN SHOES HOUSE 2024</u></b></p>
-
             </div>
 
-    </footer>
-    <script>
-        const container = document.querySelector(".container")
-  const pwShowHide = document.querySelectorAll(".showHidePw")
-  const pwFields = document.querySelectorAll(".password")
-
-
-// js code to show/hide password and change icon
-pwShowHide.forEach((eyeIcon) => {
-  eyeIcon.addEventListener("click", () => {
-    pwFields.forEach((pwField) => {
-      if (pwField.type === "password") {
-        pwField.type = "text";
-        pwShowHide.forEach((icon) => {
-          icon.classList.replace("uil-eye-slash", "uil-eye");
-        });
-      } else {
-        pwField.type = "password";
-        pwShowHide.forEach((icon) => {
-          icon.classList.replace("uil-eye", "uil-eye-slash");
-        });
-      }
-    });
-  });
-});
-
-
-
-    </script>
-
-    
-
-    <!-- Firebase CDN -->
-    <script type="module">
-      // Import Firebase libraries
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-      import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyBTVG4m9OigzEptlMkrwB07Zynzj59h0SY",
-        authDomain: "ecommerce-store-4b363.firebaseapp.com",
-        projectId: "ecommerce-store-4b363",
-        storageBucket: "ecommerce-store-4b363.appspot.com",
-        messagingSenderId: "947362841802",
-        appId: "1:947362841802:web:55c5fecd4ab45874b2e033",
-        measurementId: "G-5ZX0H3TNZ0"
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-
-  const login = document.querySelector("#login-link");
-      
-login.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
- 
-        signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    alert('logged in')
-    window.location.href = '/'
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
-      });
-  </script>
-    
+    </footer> 
 </body>
 </html>

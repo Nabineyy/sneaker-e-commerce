@@ -667,7 +667,7 @@ footer .copy{
 .container .forms {
     display: flex;
     align-items: center;
-    height: 440px;
+   
     width: 200%;
     transition: height 0.2s ease;
 }
@@ -679,17 +679,13 @@ footer .copy{
     background-color: #fff9f9b1;
     transition: margin-left 0.18s ease;
 }
-
+/* 
 .container.active .login {
     margin-left: -50%;
     opacity: 0;
     transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
+} */
 
-.container .signup {
-    opacity: 0;
-    transition: opacity 0.09s ease;
-}
 
 .container.active .signup {
     opacity: 1;
@@ -990,7 +986,7 @@ footer .copy{
     font-size: 13px;
 }
 
-.login-button{
+.login-button,.signup-button{
     background-color: blue;
     border:2px solid blue;
     width: 100%;
@@ -1000,7 +996,7 @@ footer .copy{
     outline:none;
     border-radius: 4px;
 }
-.login-button:hover{
+.login-button:hover,.signup-button:hover{
     background-color: transparent;
     color:blue;
 }
