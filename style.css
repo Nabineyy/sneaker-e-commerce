@@ -667,7 +667,6 @@ footer .copy{
 .container .forms {
     display: flex;
     align-items: center;
-   
     width: 200%;
     transition: height 0.2s ease;
 }
