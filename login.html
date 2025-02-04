@@ -11,7 +11,6 @@
 
     <section id="header">
         <a href="#"><img src="image/logo.jpg" class="logo"  alt=""></a>
-
         <div>
            <ul id="navbar">
             <li><a class="active" href="home.html">Home</a></li>
@@ -20,19 +19,15 @@
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-            
              </ul>
-
         </div>
     </section>
-
 
  <section id="loginpage">
     <div class="container">
         <div class="forms">
           <div class="form login">
             <span class="title">Login</span>
-  
             <form action="#">
               <div class="input-field">
                 <input type="text" placeholder="Enter your email" required />
@@ -43,18 +38,17 @@
                 <i class="fas fa-lock"></i>
                 <i class="fas fa-eye-slash showHidePw"></i>
               </div>
-  
               <div class="checkbox-text">
                 <div class="checkbox-content">
                   <input type="checkbox" id="logCheck" />
                   <label for="logCheck" class="text">Remember me</label>
                 </div>
-  
+
                 <a href="#" class="text">Forgot password?</a>
               </div>
   
               <div class="input-field button">
-                <input type="button" value="Login" />
+                <button type="button" id="login-link" class="login-button">Login</button>
               </div>
             </form>
   
@@ -69,26 +63,24 @@
           <!-- Registration Form -->
           <div class="form signup">
             <span class="title">Registration</span>
-  
             <form action="#">
               <div class="input-field">
-                <input type="text" placeholder="Enter your name" required />
+                <input type="text" placeholder="Enter your name" required id="signup_name" />
                 <i class="far fa-user"></i>
               </div>
               <div class="input-field">
-                <input type="text" placeholder="Enter your email" required />
+                <input type="text" placeholder="Enter your email" required id="signup_email" />
                 <i class="far fa-envelope"></i>
               </div>
               <div class="input-field">
-                <input type="password" class="password" placeholder="Create a password" required />
+                <input type="password" class="password" placeholder="Create a password" required id="signup_password"/>
                 <i class="fas fa-lock"></i>
               </div>
               <div class="input-field">
-                <input type="password" class="password" placeholder="Confirm a password" required />
+                <input type="password" class="password" placeholder="Confirm a password" required id="signup_confirm_password"/>
                 <i class="fas fa-lock"></i>
                 <i class="fas fa-eye-slash showHidePw"></i>
               </div>
-  
               <div class="checkbox-text">
                 <div class="checkbox-content">
                   <input type="checkbox" id="termCon" />
@@ -112,8 +104,6 @@
       </div>
   
  </section>
-
-
 
   <footer class="section-p1">
         <div class="col">
@@ -176,29 +166,23 @@
             </div>
 
     </footer>
-
-
-
     <script>
-        const container = document.querySelector(".container"),
-  pwShowHide = document.querySelectorAll(".showHidePw"),
-  pwFields = document.querySelectorAll(".password"),
-  signUp = document.querySelector(".signup-link"),
-  login = document.querySelector(".login-link");
-
+        const container = document.querySelector(".container")
+  const pwShowHide = document.querySelectorAll(".showHidePw")
+  const pwFields = document.querySelectorAll(".password")
+  const signUp = document.querySelector(".signup-link")
+  const login = document.querySelector("#login-link");
 // js code to show/hide password and change icon
 pwShowHide.forEach((eyeIcon) => {
   eyeIcon.addEventListener("click", () => {
     pwFields.forEach((pwField) => {
       if (pwField.type === "password") {
         pwField.type = "text";
-
         pwShowHide.forEach((icon) => {
           icon.classList.replace("uil-eye-slash", "uil-eye");
         });
       } else {
         pwField.type = "password";
-
         pwShowHide.forEach((icon) => {
           icon.classList.replace("uil-eye", "uil-eye-slash");
         });
@@ -206,16 +190,19 @@ pwShowHide.forEach((eyeIcon) => {
     });
   });
 });
-
 // js code to appear signup and login form
 signUp.addEventListener("click", (e) => {
   e.preventDefault();
-  container.classList.add("active");
+  const newUser = document.querySelector('')
 });
+
+const user = []
 
 login.addEventListener("click", (e) => {
   e.preventDefault();
-  container.classList.remove("active");
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
+  if()
 });
 
 
